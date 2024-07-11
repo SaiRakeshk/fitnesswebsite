@@ -1,0 +1,60 @@
+/* BmiCalculator.css */
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align content */
+  }
+  
+  .label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    display: block; /* Ensure labels are on separate lines */
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Add margin between inputs */
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 24px; /* Increase font size for result */
+    font-weight: bold;
+  }
+  
+  .status {
+    margin-top: 8px;
+    font-size: 18px; /* Increase font size for status */
+  }
+  
+  .status span {
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .status .underweight {
+    color: #f0ad4e;
+  }
+  
+  .status .normal-weight {
+    color: #5cb85c;
+  }
+  
+  .status .overweight {
+    color: #f0ad4e;
+  }
+  
+  .status .obese {
+    color: #d9534f;
+  }
+  
