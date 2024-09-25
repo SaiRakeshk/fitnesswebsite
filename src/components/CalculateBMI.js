@@ -3,21 +3,20 @@ import './BmiCalculator.css';
 
 const calculateBMI = (heightInCm, weight) => {
   const heightInMeters = heightInCm / 100;
-  const bmi = weight / (heightInMeters * heightInMeters);
-  return bmi;
+  return weight / (heightInMeters * heightInMeters);
 };
 
 const BmiCalculator = () => {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
-  const [bmi, setBmi] = useState(0);
+  const [bmi, setBmi] = useState(null);
   const [bmiStatus, setBmiStatus] = useState('');
 
   useEffect(() => {
     const userHeight = parseFloat(height);
     const userWeight = parseFloat(weight);
 
-    const calculateBmiValue = () => {
+    if (!Number.isNaN(userHeight) && !Number.isNaN(userWeight) && userHeight > 0 && userWeight > 0) {
       const bmiValue = calculateBMI(userHeight, userWeight);
       setBmi(bmiValue.toFixed(2));
       if (bmiValue < 18.5) {
@@ -29,12 +28,8 @@ const BmiCalculator = () => {
       } else {
         setBmiStatus('obese');
       }
-    };
-
-    if (userHeight && userWeight) {
-      calculateBmiValue();
     } else {
-      setBmi(0);
+      setBmi(null);
       setBmiStatus('');
     }
   }, [height, weight]);
@@ -60,7 +55,7 @@ const BmiCalculator = () => {
         value={weight}
         onChange={(e) => setWeight(e.target.value)}
       />
-      <p className="result">Your BMI is: {bmi}</p>
+      <p className="result">Your BMI is: {bmi !== null ? bmi : 'N/A'}</p>
       <p className="status">
         {bmiStatus && (
           <span className={bmiStatus}>
