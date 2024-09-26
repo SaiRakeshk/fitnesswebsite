@@ -30,7 +30,8 @@ export const fetchFoodNutritionByKeyword = async (keyword) => {
     const result = await response.json();
     return result;
   } catch (error) {
-    console.error('Error fetching nutrition data:', error);
+    // eslint-disable-next-line no-console
+    console.log('Error fetching nutrition data:', error);
     throw error;
   }
 };
