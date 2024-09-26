@@ -1,54 +1,134 @@
+/* FoodNutrition.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Centered container styles */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px; /* Max width for larger screens */
+  width: 100%; /* Full width on smaller screens */
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align text for heading and result */
+}
+
+/* Heading styles */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2em; /* Responsive heading */
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  justify-content: center; /* Center the form */
+  flex-direction: column; /* Stack the input and button */
+  align-items: center; /* Center items */
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%; /* Full width for input */
+  max-width: 280px; /* Limit max width on smaller screens */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px; /* Space between input and button */
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Loading and Error state styles */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Nutrition details styles */
+.nutrition-details {
+  margin-top: 20px;
+  text-align: left; /* Align details to the left */
+}
+
+p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Responsive media queries */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px; /* Less padding on smaller screens */
   }
-  
-  .label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    display: block;
+
+  h1 {
+    font-size: 1.5em; /* Smaller heading on mobile */
   }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+
+  input[type="text"] {
+    max-width: 90%; /* Increase input width on mobile */
   }
-  
-  .fetch-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
+
+  button {
+    width: 100%; /* Full width button on mobile */
   }
-  
-  .error {
-    color: red;
-    margin-top: 10px;
+}
+
+@media (min-width: 601px) and (max-width: 900px) { /* Tablet styles */
+  h1 {
+    font-size: 1.75em; /* Adjust heading size for tablets */
   }
-  
-  .nutrition-details {
-    margin-top: 20px;
+
+  input[type="text"] {
+    width: 70%; /* Wider input on tablets */
   }
-  
-  .nutrition-item {
-    margin-bottom: 20px;
+
+  button {
+    width: auto; /* Automatic width on tablets */
   }
-  
-  .nutrition-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+}
+
+@media (min-width: 901px) {
+  h1 {
+    font-size: 2em; /* Larger heading for desktops */
   }
-  
-  .nutrition-table th,
-  .nutrition-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+  .container{
+    position: center;
+  } ;
+
+  input[type="text"] {
+    width: 70%; /* Wider input on larger screens */
   }
-  
-  .nutrition-table th {
-    background-color: #f2f2f2;
-    text-align: left;
+
+  button {
+    width: auto; /* Automatic width on larger screens */
   }
-  
+}
